@@ -1,7 +1,10 @@
+// app/layout.tsx
+import { getDictionary } from '@/lib/dictonary';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// 1. Importa tu componente Header (asumiendo que lo creas en /components)
+
+// 👇 IMPORTA TU NUEVO HEADER AQUÍ
 import Header from "@/components/Header";
 
 const geistSans = Geist({
@@ -15,29 +18,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mi Proyecto Increíble",
-  description: "Una descripción que ayude a tu SEO",
+  title: "Norbert Search", // Título de tu sitio
+  description: "Buscador personalizado",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params
+}: {
+  params: { lang: 'es' | 'en' | 'ca' }
   children: React.ReactNode;
-}>) {
+}) {
+  const lang = params.lang;
+  const dict = await getDictionary(lang);
+
   return (
-    <html lang="es" className="h-full" suppressHydrationWarning>
+    <html lang={lang} className="h-full" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-full flex flex-col`}
       >
-        {/* 2. El Header vive aquí, fuera del main para que sea persistente */}
-        <Header />
 
-        {/* 3. El main con 'flex-grow' empuja el footer (si tuvieras) hacia abajo */}
+        <Header dict={dict.header} />
+
         <main className="flex-grow">
           {children}
         </main>
-
-        {/* Aquí podrías añadir un <Footer /> más adelante */}
       </body>
     </html>
   );
