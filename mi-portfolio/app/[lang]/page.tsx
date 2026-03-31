@@ -1,12 +1,14 @@
 import { getDictionary } from "@/lib/dictonary";
 
+type Locale = "es" | "en" | "ca";
+
 export default async function Home({
   params,
 }: {
-  params: Promise<{ lang: "es" | "en" | "ca" }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as Locale);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh]">

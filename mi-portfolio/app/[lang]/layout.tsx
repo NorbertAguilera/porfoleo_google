@@ -5,8 +5,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
 
-// 👇 IMPORTA TU NUEVO HEADER AQUÍ
+
 import Header from "@/components/Header";
+
+type Locale = "en" | "es" | "ca" ;
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,12 +30,12 @@ export default async function RootLayout({
   children,
   params
 }: {
-  params: Promise<{ lang: 'es' | 'en' | 'ca' }>
+  params: Promise<{ lang: string }>
   children: React.ReactNode;
 }) {
   const { lang } = await params;
 
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as Locale);
 
   return (
     <html lang={lang} className="h-full" suppressHydrationWarning>
