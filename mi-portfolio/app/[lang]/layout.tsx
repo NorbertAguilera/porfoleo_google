@@ -3,7 +3,7 @@ import { getDictionary } from '@/lib/dictonary';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-
+import type { ReactNode } from "react"; 
 
 
 import Header from "@/components/Header";
@@ -31,7 +31,7 @@ export default async function RootLayout({
   params
 }: {
   params: Promise<{ lang: string }>
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const { lang } = await params;
 
