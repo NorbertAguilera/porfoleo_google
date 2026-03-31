@@ -2,7 +2,8 @@
 import { getDictionary } from '@/lib/dictonary';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+
 
 // 👇 IMPORTA TU NUEVO HEADER AQUÍ
 import Header from "@/components/Header";
@@ -26,19 +27,23 @@ export default async function RootLayout({
   children,
   params
 }: {
-  params: { lang: 'es' | 'en' | 'ca' }
+  params: Promise<{ lang: 'es' | 'en' | 'ca' }>
   children: React.ReactNode;
 }) {
-  const lang = params.lang;
+  const { lang } = await params;
+
   const dict = await getDictionary(lang);
 
   return (
     <html lang={lang} className="h-full" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-full flex flex-col`}
+        suppressHydrationWarning
       >
 
-        <Header dict={dict.header} />
+
+        <Header dict={dict.header} lang={lang} />
+
 
         <main className="flex-grow">
           {children}

@@ -28,9 +28,11 @@ interface HeaderProps {
         about: string;
         contact: string;
     };
+    lang: string;
 }
 
-export default function Header({ dict }: HeaderProps) {
+export default function Header({ dict, lang }: HeaderProps) {
+
     const pathname = usePathname().split('/')[2] == undefined ? 'inicio' : usePathname().split('/')[2];
     //console.log(pathname);
     // Simulación de los nombres de pestañas que pediste
@@ -86,18 +88,20 @@ export default function Header({ dict }: HeaderProps) {
 
                     <Link
                         key={'Inicio'}
-                        href={'/'}
+                        href={`/${lang}`}
                         // El índice 1 ("Todo") es el activo por defecto
+
                         className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'inicio' ? 'text-gray-900 border-gray-900 font-medium' : 'border-transparent hover:text-gray-900'
                             }`}
                     >
-                        Inicio
+                        {dict.home}
                     </Link>
 
                     <Link
                         key={'Proyectos'}
-                        href={'/projects'}
+                        href={`/${lang}/projects`}
                         // El índice 1 ("Todo") es el activo por defecto
+
                         className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'projects' ? 'text-gray-900 border-gray-900 font-medium' : 'border-transparent hover:text-gray-900'
                             }`
                         }
