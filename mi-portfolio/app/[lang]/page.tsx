@@ -23,7 +23,7 @@ export default async function Home({
               <div className="w-6 h-6 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-[10px] font-bold text-text-muted">PDF</div>
               <span className="text-xs text-text-muted truncate">norbert-aguilera.com &gt; cv</span>
             </div>
-            <a href="/cv.pdf" target="_blank" className="text-xl text-blue-600 dark:text-blue-400 group-hover:underline block mb-1">
+            <a href={`${dict.home.cv_file}`} target="_blank" className="text-xl text-blue-600 dark:text-blue-400 group-hover:underline block mb-1">
               {dict.home.cv_link}
             </a>
             <p className="text-sm text-text-muted leading-relaxed pr-4">
