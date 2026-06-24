@@ -21,5 +21,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     // Evitamos que el middleware actúe sobre imágenes o archivos internos
-    matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+    matcher: ['/((?!api|_next/static|_next/image|Curiculums|favicon.ico).*)'],
 }

@@ -4,6 +4,109 @@
         "projects": "Proyectos",
         "tecnologies": "Tecnologías",
         "about": "Sobre mí",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "iaMode": "Modo IA"
+    },
+    "ia": {
+        "welcome": "¡Bienvenido a mi portfolio personal!",
+        "description": "Me llamo Norbert, soy desarrollador de software Full stack con pasión por crear soluciones innovadoras y eficientes. Me encanta explorar nuevas tecnologías y mejorar la experiencia del usuario a través de un código limpio y un diseño moderno."
+    },
+    "home": {
+        "title": "Norbert Aguilera",
+        "description": "Desarrollador Full stack",
+        "cv_link": "Previsualizar CV (PDF)",
+        "cv_file": "/Curiculums/CV_Norbert_ESP.pdf",
+        "cv_desc": "Accede a mi currículum detallado en formato PDF para conocer mi experiencia y formación.",
+        "blog_link": "Blog Personal",
+        "blog_desc": "Artículos, tutoriales y reflexiones sobre el mundo del desarrollo y la tecnología.",
+        "experience_link": "Trayectoria Laboral",
+        "experience_desc": "Detalles sobre los proyectos en los que he participado y las empresas donde he trabajado.",
+        "education_title": "Estudios y Titulaciones",
+        "studies": [
+            "Sistemas Microinformáticos y Redes (SMR)",
+            "Diseño de Aplicaciones Multiplataforma (DAM)",
+            "Actualmente en 4º año de Ingeniería Informática",
+            "Rama en desarrollo de software",
+            "Cursos IA y de Agentes IA de Microsoft"
+        ]
+    },
+    "projects": {
+        "title": "Mis proyectos",
+        "subtitle": "Una selección de los trabajos más destacados donde he aplicado mis conocimientos de desarrollo.",
+        "details": {
+            "ciclo-bnb": {
+                "title": "CicloBnB",
+                "description": "Un proyecto para reservar bicicletas entre usuarios (al estilo Airbnb).",
+                "tecnologies": [
+                    "Android",
+                    "SQLite",
+                    "Java",
+                    "XML"
+                ],
+                "link": "https://github.com/eliasporter/CicloBnBand.git"
+            },
+            "stream-sync": {
+                "title": "Stream Sync",
+                "description": "Plataforma que centraliza diferentes plataformas de streaming en una sola aplicación, usando varias APIs y gestión de usuarios y recopilación de datos.",
+                "tecnologies": [
+                    "Django",
+                    "Rest API",
+                    "Python",
+                    "HTML",
+                    "CSS",
+                    "JS",
+                    "PostgreSQL",
+                    "Tailwind",
+                    "SQLite"
+                ],
+                "link": "https://github.com/Null-Pointers2-0/JoinProject.git"
+            },
+            "anime-view": {
+                "title": "AnimeViewApp",
+                "description": "Aplicación para la visualización y seguimiento de animes sin hacer uso de API externa, recopilando los datos directamente mediante scraping de varias webs, gestionándolos y mostrándolos de manera clara y sencilla.",
+                "tecnologies": [
+                    "Android",
+                    "Java",
+                    "SQLite",
+                    "XML",
+                    "Python"
+                ],
+                "link": "https://github.com/NorbertAguilera/AnimeViewProve.git"
+            },
+            "flutter-anime": {
+                "title": "Flutter Anime App",
+                "description": "App móvil desarrollada con Flutter para la exploración de contenidos de anime, gestionándolos y mostrándolos de manera clara y sencilla, usando una API para facilitar su uso.",
+                "tecnologies": [
+                    "Flutter",
+                    "Dart",
+                    "Rest API",
+                    "SQLite"
+                ],
+                "link": "https://github.com/NorbertAguilera/flutter_anime_app.git"
+            },
+            "zone-lock": {
+                "title": "ZoneLock",
+                "description": "Aplicación para smartwatch para gestionar el esfuerzo que se está ejerciendo en diferentes ejercicios para tener medidas más exactas.",
+                "tecnologies": [
+                    "Kotlin",
+                    "Android",
+                    "Smartwatch",
+                    "SQLite",
+                    "Rest API"
+                ],
+                "link": "https://github.com/NorbertAguilera/ZoneLock.git"
+            },
+            "portfolio-google": {
+                "title": "Portfolio Estilo Google",
+                "description": "Un portfolio personal diseñado para imitar la estética de Google",
+                "tecnologies": [
+                    "Next.js",
+                    "TypeScript",
+                    "Tailwind",
+                    "Rest API"
+                ],
+                "link": "https://github.com/NorbertAguilera/porfoleo_google.git"
+            }
+        }
     }
 }
