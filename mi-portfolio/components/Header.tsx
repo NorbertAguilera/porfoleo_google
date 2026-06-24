@@ -22,6 +22,7 @@ const NorbertLogo = () => (
 
 interface HeaderProps {
     dict: {
+        iaMode: string;
         home: string;
         projects: string;
         tecnologies: string;
@@ -41,7 +42,7 @@ export default function Header({ dict, lang }: HeaderProps) {
     };
 
     return (
-        <header className="sticky top-0 z-50 bg-white border-b border-gray-200 antialiased">
+        <header className="sticky top-0 z-50 bg-header-bg border-b border-border antialiased">
             {/* --- Fila Superior: Logo + Barra de Búsqueda --- */}
             <div className="flex items-center justify-between px-6 py-3">
                 <div className="flex items-center gap-8 flex-1">
@@ -55,12 +56,12 @@ export default function Header({ dict, lang }: HeaderProps) {
                         <input
                             type="text"
                             placeholder="google" // Placeholder que pediste
-                            className="w-full h-[46px] pl-6 pr-24 border border-gray-200 rounded-full text-base focus:outline-none focus:ring-1 focus:ring-blue-300 focus:border-blue-300 transition-all shadow-sm hover:shadow-md"
+                            className="w-full h-[46px] pl-6 pr-24 border border-input-border bg-input-bg rounded-full text-base focus:outline-none focus:ring-1 focus:ring-blue-300 focus:border-blue-300 transition-all shadow-sm hover:shadow-md text-foreground"
                         />
                         {/* Iconos de la barra de búsqueda */}
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3 text-gray-500">
-                            <XMarkIcon className="h-5 w-5 cursor-pointer hover:text-black" />
-                            <div className="h-6 w-px bg-gray-200" /> {/* Separador vertical */}
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3 text-text-muted">
+                            <XMarkIcon className="h-5 w-5 cursor-pointer hover:text-foreground" />
+                            <div className="h-6 w-px bg-border" /> {/* Separador vertical */}
                             <MicrophoneIcon className="h-6 w-6 cursor-pointer text-[#4285F4]" />
                             <CameraIcon className="h-6 w-6 cursor-pointer text-[#4285F4]" />
                             <MagnifyingGlassIcon className="h-6 w-6 cursor-pointer text-[#4285F4] ml-1" />
@@ -76,22 +77,33 @@ export default function Header({ dict, lang }: HeaderProps) {
                     </button>*/}
                     <LanguageSwitcher />
                     {/* Avatar de perfil */}
-                    <div className="relative w-8 h-8 overflow-hidden bg-gray-300 rounded-full cursor-pointer">
-                        <svg className="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
+                    <div className="relative w-8 h-8 overflow-hidden bg-border rounded-full cursor-pointer">
+                        <svg className="absolute w-10 h-10 text-text-muted -left-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
                     </div>
                 </div>
             </div>
 
             {/* --- Fila Inferior: Pestañas de Navegación --- */}
             <div className="px-6">
-                <nav className="flex items-center gap-4 text-[14px] text-gray-700 font-normal">
+                <nav className="flex items-center gap-4 text-[14px] text-text-muted font-normal">
 
+                    <Link
+                        key={'IA'}
+                        href={`/${lang}/IA`}
+                        // El índice 1 ("Todo") es el activo por defecto
+
+                        className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'IA' ? 'text-foreground border-foreground font-medium' : 'border-transparent hover:text-foreground'
+                            }`
+                        }
+                    >
+                        {dict.iaMode}
+                    </Link>
                     <Link
                         key={'Inicio'}
                         href={`/${lang}`}
                         // El índice 1 ("Todo") es el activo por defecto
 
-                        className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'inicio' ? 'text-gray-900 border-gray-900 font-medium' : 'border-transparent hover:text-gray-900'
+                        className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'inicio' ? 'text-foreground border-foreground font-medium' : 'border-transparent hover:text-foreground'
                             }`}
                     >
                         {dict.home}
@@ -102,18 +114,30 @@ export default function Header({ dict, lang }: HeaderProps) {
                         href={`/${lang}/projects`}
                         // El índice 1 ("Todo") es el activo por defecto
 
-                        className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'projects' ? 'text-gray-900 border-gray-900 font-medium' : 'border-transparent hover:text-gray-900'
+                        className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'projects' ? 'text-foreground border-foreground font-medium' : 'border-transparent hover:text-foreground'
                             }`
                         }
                     >
-                        Proyectos
+                        {dict.projects}
                     </Link>
 
                     {/* Opciones con menú desplegable (Más, Herramientas) */}
 
-                    <button className="flex items-center gap-1 pb-3 pt-1 border-b-2 border-transparent text-gray-700 hover:text-gray-900 ml-4">
+                    {/*<button className="flex items-center gap-1 pb-3 pt-1 border-b-2 border-transparent text-text-muted hover:text-foreground ml-4">
                         Herramientas <svg className="w-3 h-3" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"></path></svg>
-                    </button>
+                    </button>*/}
+
+                    <Link
+                        key={'tecnologies'}
+                        href={`/${lang}/tecnologies`}
+                        // El índice 1 ("Todo") es el activo por defecto
+
+                        className={`pb-3 pt-1 cursor-pointer border-b-2 transition-colors ${pathname === 'tecnologies' ? 'text-foreground border-foreground font-medium' : 'border-transparent hover:text-foreground'
+                            }`
+                        }
+                    >
+                        {dict.tecnologies}
+                    </Link>
                 </nav>
             </div>
         </header>
