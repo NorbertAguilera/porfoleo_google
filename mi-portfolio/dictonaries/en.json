@@ -36,7 +36,7 @@
         "details": {
             "ciclo-bnb": {
                 "title": "CicloBnB",
-                "description": "A project about renting bicycles between users (Airbnb style).",
+                "description": "A project for renting bicycles between users (Airbnb style).",
                 "tecnologies": [
                     "Android",
                     "SQLite",
@@ -107,6 +107,16 @@
                 ],
                 "link": "https://github.com/NorbertAguilera/porfoleo_google.git"
             }
+        }
+    },
+    "tecnologies": {
+        "title": "Technologies",
+        "subtitle": "My tech stack",
+        "categories": {
+            "languages": "Languages",
+            "frontend": "Frontend and Mobile",
+            "backend": "Backend and Databases",
+            "tools": "Tools"
         }
     }
 }

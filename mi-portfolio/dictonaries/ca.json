@@ -47,19 +47,19 @@
             },
             "stream-sync": {
                 "title": "Stream Sync",
-            "description": "Plataforma que centralitza diferents plataformes de streaming en una sola aplicació, usant diverses APIs i gestió d'usuaris i recollida de dades.",
-            "tecnologies": [
-                "Django",
-                "Rest API",
-                "Python",
-                "HTML",
-                "CSS",
-                "JS",
-                "PostgreSQL",
-                "Tailwind",
-                "SQLite"
-            ],
-            "link": "https://github.com/Null-Pointers2-0/JoinProject.git"
+                "description": "Plataforma que centralitza diferents plataformes de streaming en una sola aplicació, usant diverses APIs i gestió d'usuaris i recollida de dades.",
+                "tecnologies": [
+                    "Django",
+                    "Rest API",
+                    "Python",
+                    "HTML",
+                    "CSS",
+                    "JS",
+                    "PostgreSQL",
+                    "Tailwind",
+                    "SQLite"
+                ],
+                "link": "https://github.com/Null-Pointers2-0/JoinProject.git"
             },
             "anime-view": {
                 "title": "AnimeViewApp",
@@ -107,6 +107,16 @@
                 ],
                 "link": "https://github.com/NorbertAguilera/porfoleo_google.git"
             }
+        }
+    },
+    "tecnologies": {
+        "title": "Tecnologies",
+        "subtitle": "El meu stack tecnològic",
+        "categories": {
+            "languages": "Llenguatges",
+            "frontend": "Frontend i Mòbil",
+            "backend": "Backend i Bases de Dades",
+            "tools": "Eines"
         }
     }
 }

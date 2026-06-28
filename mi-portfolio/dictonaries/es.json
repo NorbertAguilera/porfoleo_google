@@ -108,5 +108,15 @@
                 "link": "https://github.com/NorbertAguilera/porfoleo_google.git"
             }
         }
+    },
+    "tecnologies": {
+        "title": "Tecnologías",
+        "subtitle": "Mi stack tecnológico",
+        "categories": {
+            "languages": "Lenguajes",
+            "frontend": "Frontend y Móvil",
+            "backend": "Backend y Bases de Datos",
+            "tools": "Herramientas"
+        }
     }
 }
